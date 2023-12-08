@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+  <title></title>
   <style>
     body {
       margin: 0;
@@ -15,17 +15,36 @@
     }
 
     img {
+      max-width: 100%;
       max-height: 100%;
-      max-width: none;
       height: auto;
       width: auto;
+    }
+
+    @media (orientation: landscape) {
+      body {
+        transform: rotate(90deg);
+        transform-origin: top left;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      img {
+        transform: rotate(-90deg);
+        transform-origin: top left;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Replace 'your-image.jpg' with the path to your portrait image -->
-<img src="13.jpg" alt="Responsive Portrait Image">
+<!-- Replace 'your-image.jpg' with the path to your image -->
+<img src="13.jpg" alt="Responsive Image">
 
 </body>
 </html>
